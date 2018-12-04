@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>任务列表页面</title>
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/body.css">
+</head>
+<body>
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="../plugins/DataTables-1.10.15/media/css/jquery.dataTables.css">
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="../plugins/DataTables-1.10.15/media/js/jquery.js"></script>
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="../plugins/DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
+
+<div class="container">
+    <!-- Standard button -->
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> 增加</button>
+    <!-- Indicates caution should be taken with this action -->
+    <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> 删除</button>
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-play-circle"></span> 开启</button>
+    <!-- Contextual button for informational alert messages -->
+    <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-pause"></span> 暂停</button>
+</div>
+
+
+<table id="example" class="display table-bordered" style="width:100%">
+    <thead>
+    <tr>
+        <th></th>
+        <th>状态</th>
+        <th>监控项目名称</th>
+        <th>摘要</th>
+        <th>监控类型</th>
+        <th>监控频率</th>
+        <th>平均可用率</th>
+        <th>平均响应时间</th>
+        <th>操作</th>
+        <th>xx</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td></td>
+        <td>Tiger Nixon</td>
+        <td>System Architect</td>
+        <td>Edinburgh</td>
+        <td>61</td>
+        <td>2011/04/25</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+        <td><span class="glyphicon glyphicon-pause"></span> <span class="glyphicon glyphicon-edit"> </span><span
+                class="glyphicon glyphicon-trash"></span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Garrett Winters</td>
+        <td>Accountant</td>
+        <td>Tokyo</td>
+        <td>63</td>
+        <td>2011/07/25</td>
+        <td>$170,750</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Ashton Cox</td>
+        <td>Junior Technical Author</td>
+        <td>San Francisco</td>
+        <td>66</td>
+        <td>2009/01/12</td>
+        <td>$86,000</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Cedric Kelly</td>
+        <td>Senior Javascript Developer</td>
+        <td>Edinburgh</td>
+        <td>22</td>
+        <td>2012/03/29</td>
+        <td>$433,060</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Airi Satou</td>
+        <td>Accountant</td>
+        <td>Tokyo</td>
+        <td>33</td>
+        <td>2008/11/28</td>
+        <td>$162,700</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+        <td>$320,800</td>
+    </tr>
+
+
+    </tbody>
+    <tfoot>
+    <tr>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Office</th>
+    <th>Age</th>
+    <th>Start date</th>
+    <th>Salary</th>
+    <td>$320,800</td>
+    <td>$320,800</td>
+    <td>$320,800</td>
+    <td>$320,800</td>
+    </tr>
+    </tfoot>
+</table>
+
+<script>
+    // 第三步：初始化DataTables;
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            columnDefs: [ {
+                orderable: false,
+                className: 'select-checkbox',
+                targets:   0
+            } ],
+            select: {
+                style:    'os',
+                selector: 'td:first-child'
+            },
+            order: [[ 1, 'asc' ]]
+        } );
+    } );
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+@charset "utf-8";
+/*CSS Document*/
+
+.comWidth {
+    width: 1920px;
+    height: 1283px;
+    background-color: gainsboro;
+    margin-left: auto;
+    margin-right: auto;
+}
+.headerNav{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.remind{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.timer{
+    padding-left: 10px;
+}
+.group{
+    padding-left: 10px;
+}
+.login{
+    padding-left: 10px;
+}
+.switch{
+    padding-left: 10px;
+}

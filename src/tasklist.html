@@ -19,10 +19,24 @@
             src="js/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.min.js"></script>
     <link rel="stylesheet" type="text/css"
           href="js/plugins/DataTables-1.10.15/extensions/Select/css/select.dataTables.min.css">
+    <!--jquery-simple-datetimepicker的引入-->
+    <link rel="stylesheet" href="./js/plugins/jquery-simple-datetimepicker-master/jquery.simple-dtpicker.css">
+    <link rel="stylesheet" href="./js/plugins/jquery-simple-datetimepicker-master/jquery.simple-dtpicker.js">
+    <!--bootstrap-datetimepicker的引入-->
+    <link rel="stylesheet" href="./js/plugins/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css">
+    <script src="./js/plugins/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
 
 </head>
 <body>
 
+<div>
+    <p>
+        <label>开始时间:</label>
+        <input class="form_datetime" id="date_start" type="text" placeholder="YYYY-MM-DD HH:MM:SS"/>
+        <label>结束时间:</label>
+        <input class="form_datetime" id="date_end" type="text" placeholder="YYYY-MM-DD HH:MM:SS"/>
+    </p>
+</div>
 <div class="container">
     <!-- Standard button -->
     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;增加</button>
@@ -458,6 +472,32 @@
             }
         });
     });
+    //日期插件
+    $(".form_datetime").datetimepicker({
+        format: 'yyyy-mm-dd HH:mm:ss',//显示格式
+        todayHighlight: 1,//今天高亮
+        minView: "month",//设置只显示到月份
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1,
+        autoclose: 1//选择后自动关闭
+    });
+    // $("#date_start").prop("readonly", true).datepicker({
+    //     changeMonth: true,
+    //     dateFormat: "yy-mm-dd",
+    //     onClose: function (selectedDate) {
+    //         $("#date_end").datepicker("option", "minDate", selectedDate);
+    //     }
+    // });
+    //
+    // $("#date_end").prop("readonly", true).datepicker({
+    //     changeMonth: true,
+    //     dateFormat: "yy-mm-dd",
+    //     onClose: function (selectedDate) {
+    //         $("#date_start").datepicker("option", "maxDate", selectedDate);
+    //         $("#date_end").val($(this).val());
+    //     }
+    // });
 </script>
 </body>
 </html>

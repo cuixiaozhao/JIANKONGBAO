@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--引入Boostrap-->
+    <link type="text/css" rel="stylesheet" href="js/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+    <!--引入DataTables-->
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="js/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css">
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="js/plugins/DataTables-1.10.15/media/js/jquery.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8"
+            src="js/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+    <title>选择监控任务类型</title>
+</head>
+<body>
+<!--填写告警信息-->
+<p>
+    <label for="monitor-item">监控项目名称:</label>
+    <input type="text" name="monitor-item" id="monitor-item" placeholder="请输入监控项目名称">
+    <label>主机域名或IP:</label>
+    <input type="text" name="monitor-item" placeholder="请输入主机域名或IP">
+    <label>设备管理地址:</label>
+    <input type="text" name="monitor-item" placeholder="请输入设备管理地址">
+    <label>源IP地址:</label>
+    <input type="text" name="monitor-item" placeholder="请输入源IP地址">
+    <label>目的IP地址:</label>
+    <input type="text" placeholder="请输入目的IP地址">
+    <label>PING次数:</label>
+    <input type="text" placeholder="请输入PING的次数">
+</p>
+<!--监测设置和告警设置-->
+<div>
+    <label for="monitor-group">选择监测点分组：</label><br>
+    <select id="monitor-group" name="monitor-group">
+        <!--selected，将会被预选中-->
+        <option value="深圳" selected>深圳</option>
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+    </select>
+</div>
+<div>
+    <label for="monitor-times">监控频率:</label><br>
+    <select id="monitor-times" name="monitor-times">
+        <!--selected，将会被预选中-->
+        <option value="1min" selected>1分钟</option>
+        <option value="2min">2分钟</option>
+        <option value="5min">5分钟</option>
+
+    </select>
+</div>
+
+<label for="monitor-remind">连续告警提醒:</label><br>
+<select id="monitor-remind" name="monitor-remind">
+    <!--selected，将会被预选中-->
+    <option value="1min" selected>1分钟</option>
+    <option value="2min">2分钟</option>
+    <option value="5min">5分钟</option>
+    <option value="10min">10分钟</option>
+</select>
+
+<p>
+    <label for="monitor-list">重试几次告警:</label><br>
+    <select id="monitor-list" name="monitor-group">
+        <!--selected，将会被预选中-->
+        <option value="1time" selected>1次</option>
+        <option value="1time">2次</option>
+        <option value="3time">3次</option>
+    </select>
+</p>
+<!--告警设置-->
+<p>
+    <label>自定义告警线:</label>
+    <button class="btn btn-primary " type="submit"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>添加自定义告警线
+    </button>
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <td colspan="7" style="text-align: center">已经添加的自定义告警线</td>
+
+    </tr>
+    <tr>
+        <td>指标</td>
+        <td>条件</td>
+        <td>阈值</td>
+        <td>对比基数</td>
+        <td>触发次数</td>
+        <td>开启状态</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>
+            <a href=""><span class="glyphicon glyphicon-pause"></span> </a>
+            <a href=""><span class="glyphicon glyphicon-edit"> </span></a>
+        </th>
+    </tr>
+    </tbody>
+</table>
+<p>
+    <label>自定义告警线:</label>
+    <select id="project-range" name="project-range">
+        <!--selected，将会被预选中-->
+        <option value="1time" selected="selected">所有所在企业用户</option>
+        <option value="1time">用户组</option>
+        <option value="3time">部分企业用户</option>
+        <option value="3time">仅限本人</option>
+        <option value="3time">仅限本人</option>
+        <option value="3time">仅限本人</option>
+        <option value="3time">仅限本人</option>
+        <option value="3time">仅限本人</option>
+        <option value="3time">仅限本人</option>
+    </select>
+</p>
+
+<!--自定义告警线-->
+<table class="table table-bordered table-hover" id="productTable">
+    <thead>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <th><input type="checkbox" class="checkall"/>&nbsp;&nbsp;所属部门</th>
+        <th><input type="checkbox" class="checkall"/>&nbsp;&nbsp;对该用户公开权限</th>
+        <th><input type="checkbox" class="checkall"/>&nbsp;&nbsp;Email</th>
+        <th><input type="checkbox" class="checkall"/>&nbsp;&nbsp;手机短信</th>
+        <th><input type="checkbox" class="checkall"/>&nbsp;&nbsp;电话语音</th>
+        <th><input type="checkbox" class="checkall"/>&nbsp;&nbsp;APP推送</th>
+        <th><input type="checkbox" class="checkall"/>&nbsp;&nbsp;连续提醒</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+
+
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <td></td>
+        <td></td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" class="checkall"/>&nbsp;&nbsp;</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th><input type="checkbox" class="checkall"/></th>
+        <th>所属部门</th>
+        <th>对该用户公开权限</th>
+        <th>Email</th>
+        <th>手机短信</th>
+        <th>电话语音</th>
+        <th>APP推送</th>
+        <th>连续提醒</th>
+    </tr>
+    </tfoot>
+</table>
+<style type="text/css">
+    .btn-primary {
+        float: right;
+
+    }
+
+    .btn-info {
+        float: right;
+    }
+</style>
+<a class="btn btn-primary" href="#" role="button">保存</a>
+&nbsp;
+<a class="btn btn-info" href="#" role="button"> <span class="glyphicon glyphicon-chevron-left"
+                                                      aria-hidden="true"></span>&nbsp;返回列表</a>
+
+<script type="text/javascript">
+    $(".checkall").click(function () {
+        var check = $(this).prop("checked");
+        $(".checkchild").prop("checked", check);
+    });
+
+
+</script>
+</body>
+</html>

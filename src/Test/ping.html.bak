@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <title>PING页面</title>
+</head>
+<body>
+<div class="comWidth">
+    <div class="headerBar ">
+        <div class="headerNav ">
+            <div class="headerLogo ">
+                <a href="#"><img src="images/LOGO.png" alt="监控LOGO"></a>
+            </div>
+            <div class="monitoringSummary fl">
+                <a href="">监控概述</a>
+            </div>
+            <div class="taskManage fl">
+                <a href="">任务管理</a>
+            </div>
+            <div class="dataGather fl">
+                <a href="">数据统计</a>
+            </div>
+            <div class="gatherPoint fl">
+                <a href="">采集器及监控点</a>
+            </div>
+
+        </div>
+        <div class="headerIcon ">
+            <div class="remind fr">
+                <a href=""><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+            </div>
+            <div class="timer fr">
+                <a href=""><span class="glyphicon glyphicon-time" aria-hidden="true"></span></a>
+
+            </div>
+            <div class="group fr">
+                <a href=""><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></a>
+
+            </div>
+            <div class="switch fr">
+                <a href=""><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span></a>
+
+            </div>
+            <div class="login fr">
+                <a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="bodyBar">
+        <div class="bodyTop">
+
+        </div>
+        <div bodyLeft>
+            <div class="webSite">
+                <div class="">
+
+                </div>
+            </div>
+            <div class="ping"></div>
+            <div class="dns"></div>
+            <div class="traceRoute"></div>
+            <div class="tcp"></div>
+            <div class="udp"></div>
+            <div class="ftp"></div>
+        </div>
+        <div bodyRight>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--引入Boostrap-->
+    <!--1、引入Boostrap-->
     <link type="text/css" rel="stylesheet" href="js/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
-    <!--引入DataTables-->
-    <!-- DataTables CSS -->
+    <!--2、引入DataTables-->
+    <!-- 2-1DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="js/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css">
-    <!-- jQuery -->
+    <!-- 2-2jQuery -->
     <script type="text/javascript" charset="utf8" src="js/plugins/DataTables-1.10.15/media/js/jquery.js"></script>
-    <!-- DataTables -->
+    <!-- 2-3DataTables -->
     <script type="text/javascript" charset="utf8"
             src="js/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+
+
+    <!--引入时间日期插件jquery-simple-datetimepicker-master--->
+
     <title>选择监控任务类型</title>
 </head>
 <body>
@@ -33,6 +37,17 @@
     <label>PING次数:</label>
     <input type="text" placeholder="请输入PING的次数">
 </p>
+
+<div>
+    <p>
+        <label>开始时间:</label>
+        <input class="form_datetime" id="date_start" type="text" placeholder="YYYY-MM-DD HH:MM:SS"/>
+        <label>结束时间:</label>
+        <input class="form_datetime" id="date_end" type="text" placeholder="YYYY-MM-DD HH:MM:SS"/>
+        <button type="button" class="btn btn-info">查询</button>
+    </p>
+
+</div>
 <!--监测设置和告警设置-->
 <div>
     <label for="monitor-group">选择监测点分组：</label><br>
